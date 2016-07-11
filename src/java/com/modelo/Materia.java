@@ -74,6 +74,11 @@ public class Materia implements Serializable {
         this.nombre = nombre;
         this.nCreditos = nCreditos;
     }
+    public Materia( String nombre, int nCreditos) {
+        this.idMateria = idMateria;
+        this.nombre = nombre;
+        this.nCreditos = nCreditos;
+    }
 
     public Integer getIdMateria() {
         return idMateria;
