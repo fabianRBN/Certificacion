@@ -40,4 +40,8 @@ public class MaestroDAO {
     public  List<Maestro> listar() throws ServicioExcepcion{
         return em.createNamedQuery("Maestro.findAll").getResultList();
     }
+    @Transactional(rollbackFor = {ServicioExcepcion.class})
+    public Maestro consultar(int id) {
+       return em.find(Maestro.class, id);
+    }
 }

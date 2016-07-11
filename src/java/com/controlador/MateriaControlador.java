@@ -59,9 +59,11 @@ public class MateriaControlador {
     }
     
     @RequestMapping(value="/crear",method = RequestMethod.POST)
-    public String guardar(@RequestParam("txtNombre") String nom, @RequestParam("txtApellido") String n_credito, @RequestParam("txtCedula") String maestro , Model m) {
+    public String guardar(@RequestParam("txtNombre") String nom, @RequestParam("txtApellido") String n_credito, @RequestParam("cbomaestros") String maestro , Model m) {
         try {
-            Materia materia = new Materia(nom, Integer.parseInt(n_credito));
+            int idmaestro = Integer.parseInt(maestro);
+            Maestro resultado = this.daomaestro.consultar(idmaestro);
+            Materia materia = new Materia(nom, Integer.parseInt(n_credito),resultado);
             dao.crear(materia);
             return listar(m);
         } catch (ServicioExcepcion ex) {

@@ -83,7 +83,7 @@
                                 <input type="text" class="form-control" name="txtApellido">
                             </div>
                         </div>
-                        <sp:select id="cmbMaestros"  items="${maestros}" itemLabel="nombre" itemValue="idMaestro" path="maestros" multiple="true"></sp:select>
+                        <sp:select name="cbomaestros"  items="${maestros}" itemLabel="nombre" itemValue="idMaestro" path="maestros" multiple="true"></sp:select>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
                                 <input type="submit" value="Guardar" class="btn btn-success" />
