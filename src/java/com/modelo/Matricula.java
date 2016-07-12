@@ -65,6 +65,11 @@ public class Matricula implements Serializable {
         this.idMatricula = idMatricula;
         this.fechaM = fechaM;
     }
+     public Matricula(Materia materia, Alumno alumno, Date fechaM) {
+        this.idMateria = materia;
+        this.idAlumno = alumno;
+        this.fechaM = fechaM;
+    }
 
     public Integer getIdMatricula() {
         return idMatricula;

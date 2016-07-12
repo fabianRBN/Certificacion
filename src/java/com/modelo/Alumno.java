@@ -62,7 +62,7 @@ public class Alumno implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "cedula")
-    private int cedula;
+    private String cedula;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "deuda")
     private Double deuda;
@@ -83,12 +83,19 @@ public class Alumno implements Serializable {
         this.idAlumno = idAlumno;
     }
 
-    public Alumno(Integer idAlumno, String nombre, String apellido, int cedula, Date fechaN) {
+    public Alumno(Integer idAlumno, String nombre, String apellido, String cedula, Date fechaN) {
         this.idAlumno = idAlumno;
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.fechaN = fechaN;
+    }
+    public Alumno(Integer idAlumno, String nombre, String apellido, String cedula) {
+        this.idAlumno = idAlumno;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cedula = cedula;
+       
     }
 
     public Integer getIdAlumno() {
@@ -115,11 +122,11 @@ public class Alumno implements Serializable {
         this.apellido = apellido;
     }
 
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 

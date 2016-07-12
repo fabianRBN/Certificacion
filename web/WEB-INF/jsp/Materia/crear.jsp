@@ -48,6 +48,9 @@
                         <li>
                             <a href="maestro.htm"><i class="fa fa-fw"></i> Maestros</a>
                         </li>
+                        <li>
+                            <a href="materia.htm"><i class="fa fa-fw"></i> Materias</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

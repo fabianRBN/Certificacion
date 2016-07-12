@@ -50,6 +50,9 @@
                         <li>
                             <a href="materia.htm"><i class="fa fa-fw"></i> Materia</a>
                         </li>
+                        <li>
+                            <a href="matricula.htm"><i class="fa fa-fw"></i> Matricula</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

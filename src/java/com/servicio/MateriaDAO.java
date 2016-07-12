@@ -40,5 +40,8 @@ public class MateriaDAO {
     public  List<Materia> listar() throws ServicioExcepcion{
         return em.createNamedQuery("Materia.findAll").getResultList();
     }
-    
+    @Transactional(rollbackFor = {ServicioExcepcion.class})
+    public Materia consultar(int id) {
+       return em.find(Materia.class, id);
+    }
 }
