@@ -42,16 +42,16 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
                         <li class="active">
-                            <a href="index.htm"><i class="fa fa-fw"></i> Indice</a>
+                            <a href="${pageContext.request.contextPath}/index.htm"><i class="fa fa-fw"></i> Indice</a>
                         </li>
                         <li>
-                            <a href="maestro.htm"><i class="fa fa-fw"></i> Maestros</a>
+                            <a href="${pageContext.request.contextPath}/maestro.htm"><i class="fa fa-fw"></i> Maestros</a>
                         </li>
                         <li>
-                            <a href="materia.htm"><i class="fa fa-fw"></i> Materia</a>
+                            <a href="${pageContext.request.contextPath}/materia.htm"><i class="fa fa-fw"></i> Materias</a>
                         </li>
                         <li>
-                            <a href="matricula.htm"><i class="fa fa-fw"></i> Matricula</a>
+                            <a href="${pageContext.request.contextPath}/matricula.htm"><i class="fa fa-fw"></i> Matricula</a>
                         </li>
                     </ul>
                 </div>

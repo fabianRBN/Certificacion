@@ -14,6 +14,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -71,6 +72,26 @@ public class MateriaControlador {
             return "error";
         }
     }
-   
+    
+    @RequestMapping(value = "/editar/{idMateria}", method = RequestMethod.GET)
+    public String editarVista(@PathVariable("idMateria") String id, Model m) {
+        try {
+            List<Materia> materia = dao.listar();
+            Materia seleccionmateria = new Materia(0,"--Seleccione--",0  );
+            materia.add(0, seleccionmateria);
+            m.addAttribute("alumnos",materia);
+
+            int idmateria = Integer.parseInt(id);
+            Materia resultado = this.dao.consultar(idmateria);
+            m.addAttribute("resultado", resultado);
+            return "Materia/editar";
+        } catch (ServicioExcepcion ex) {
+            m.addAttribute("err", ex.getMessage());
+            return "error";
+        }
+    }
+
+    //Vicular Materia y ID
+    
     
 }

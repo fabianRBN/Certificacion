@@ -75,7 +75,7 @@ public class MatriculaControlador {
     }
     
     @RequestMapping(value="/crear",method = RequestMethod.POST)
-    public String guardar(@RequestParam("txtNombre") String nom, @RequestParam("cboalumno") String alumno, @RequestParam("cbomateria") String materia ,@RequestParam("txtfecha") String f, Model m) throws ParseException {
+    public String guardar( @RequestParam("cboalumno") String alumno, @RequestParam("cbomateria") String materia ,@RequestParam("txtfecha") String f, Model m) throws ParseException {
         try {
             int idmateria = Integer.parseInt(materia);
             int idalumno = Integer.parseInt(alumno);

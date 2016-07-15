@@ -43,13 +43,16 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
                         <li class="active">
-                            <a href="index.htm"><i class="fa fa-fw"></i> Indice</a>
+                            <a href="${pageContext.request.contextPath}/index.htm"><i class="fa fa-fw"></i> Indice</a>
                         </li>
                         <li>
-                            <a href="maestro.htm"><i class="fa fa-fw"></i> Maestros</a>
+                            <a href="${pageContext.request.contextPath}/maestro.htm"><i class="fa fa-fw"></i> Maestros</a>
                         </li>
                         <li>
-                            <a href="materia.htm"><i class="fa fa-fw"></i> Materias</a>
+                            <a href="${pageContext.request.contextPath}/materia.htm"><i class="fa fa-fw"></i> Materias</a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/matricula.htm"><i class="fa fa-fw"></i> Matricula</a>
                         </li>
                     </ul>
                 </div>
@@ -86,7 +89,12 @@
                                 <input type="text" class="form-control" name="txtApellido">
                             </div>
                         </div>
-                        <sp:select name="cbomaestros"  items="${maestros}" itemLabel="nombre" itemValue="idMaestro" path="maestros" multiple="true"></sp:select>
+                        <div class="form-group">
+                            <label for="txtApellido" class="col-lg-2 control-label">Maestro</label>
+                            <div class="col-lg-6">
+                                <sp:select name="cbomaestros" class="form-control" items="${maestros}" itemLabel="nombre" itemValue="idMaestro" path="maestros" multiple="true"></sp:select>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
                                 <input type="submit" value="Guardar" class="btn btn-success" />

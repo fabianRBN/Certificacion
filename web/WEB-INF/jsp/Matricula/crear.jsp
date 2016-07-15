@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix= "c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix= "sp" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,14 +19,24 @@
         <link href="${pageContext.request.contextPath}/Recursos/css/sb-admin.css" rel="stylesheet" type="text/css"/>
         <link href="${pageContext.request.contextPath}/Recursos/css/plugins/morris.css" rel="stylesheet" type="text/css"/>
         <link href="${pageContext.request.contextPath}/Recursos/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-
+        
         <script src="${pageContext.request.contextPath}/Recursos/js/jquery.js" type="text/javascript"></script>
         <script src="${pageContext.request.contextPath}/Recursos/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="${pageContext.request.contextPath}/Recursos/js/plugins/morris/raphael.min.js" type="text/javascript"></script>
         <script src="${pageContext.request.contextPath}/Recursos/js/plugins/morris/morris.min.js" type="text/javascript"></script>
         <script src="${pageContext.request.contextPath}/Recursos/js/plugins/morris/morris-data.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+             <script>
+                $( function() {
+                $( "#datepicker" ).datepicker();
+                } );
+            </script>
     </head>
     <body>
+        
         <div id="wrapper">
             <!-- Navigation -->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -43,13 +54,16 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
                         <li class="active">
-                            <a href="index.htm"><i class="fa fa-fw"></i> Indice</a>
+                            <a href="${pageContext.request.contextPath}/index.htm"><i class="fa fa-fw"></i> Indice</a>
                         </li>
                         <li>
-                            <a href="maestro.htm"><i class="fa fa-fw"></i> Maestros</a>
+                            <a href="${pageContext.request.contextPath}/maestro.htm"><i class="fa fa-fw"></i> Maestros</a>
                         </li>
                         <li>
-                            <a href="materia.htm"><i class="fa fa-fw"></i> Materias</a>
+                            <a href="${pageContext.request.contextPath}/materia.htm"><i class="fa fa-fw"></i> Materias</a>
+                        </li>
+                        <li>
+                            <a href="${pageContext.request.contextPath}/matricula.htm"><i class="fa fa-fw"></i> Matricula</a>
                         </li>
                     </ul>
                 </div>
@@ -72,22 +86,22 @@
                     <!-- /.row -->
 
                     <!-- Page Content-->
-                    <form class="form-horizontal" action="${pageContext.request.contextPath}/materia/crear.htm" method="POST">
+                    <form class="form-horizontal" action="${pageContext.request.contextPath}/matricula/crear.htm" method="POST">
                         <hr/>
                         <div class="form-group">
-                            <label for="txtNombre" class="col-lg-2 control-label">Nombre de la Materia:</label>
-                            <div class="col-lg-6">
-                                <input type="text" class="form-control" name="txtNombre">
-                            </div>
+                            <label for="txt" class="col-lg-2 control-label">Fecha</label>
+                            <input type="text" id="datepicker" name="txtfecha">
                         </div>
+                       
                         <div class="form-group">
-                            <label for="txtApellido" class="col-lg-2 control-label">Numero de Creditos</label>
-                            <div class="col-lg-6">
-                                <input type="text" class="form-control" name="txtApellido">
-                            </div>
-                        </div>    
-                      <sp:select name="cbomaterias"  items="${materias}" itemLabel="nombre" itemValue="idMateria" path="materias" multiple="true"></sp:select>
-                       <sp:select name="cbomaterias"  items="${alumnos}" itemLabel="nombre" itemValue="idAlumno" path="alumnos" multiple="true"></sp:select>
+                            <label for="txt" class="col-lg-2 control-label">Materia</label>
+                            <sp:select name="cbomateria" class="form-control"  items="${materias}" itemLabel="nombre" itemValue="idMateria" path="materias" multiple="true"></sp:select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="txt" class="col-lg-2 control-label">Alumno</label>
+                            <sp:select name="cboalumno"  class="form-control" items="${alumnos}" itemLabel="nombre" itemValue="idAlumno" path="alumnos" multiple="true"></sp:select>
+                        </div>
                       
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
